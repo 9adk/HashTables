@@ -7,7 +7,8 @@ import org.junit.jupiter.api.Test;
 class LinkedHashMapTest {
 
 	/**
-	 * Usecase2 for finding frequency of paranoid
+	 * The method is finding the frequency of the word
+	 * and removing a particular word from the linked list
 	 */
 	@Test
 	public void givenASentence_WhenWordsAreAddedToList_ShouldReturnParanoidFrequency() {
@@ -25,6 +26,8 @@ class LinkedHashMapTest {
 			map.add(word, value);
 		}
 		int frequency = map.get("paranoid");
+		System.out.println(map);
+		map.remove("avoidable"); 							//Removing the "avoidable" node from the list
 		System.out.println(map);
 		assertEquals(3, frequency);
 	}

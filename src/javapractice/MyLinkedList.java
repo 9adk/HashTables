@@ -11,12 +11,16 @@ public class MyLinkedList<K> {
 	 * @return
 	 */
 	public INode<K> search(K key) {
-		INode temp = head;
-		while (temp != null && temp.getNext() != null) {
-			if (temp.getKey().equals(key)) {
-				return temp;
+		if (tail != null && tail.getKey().equals(key)) {
+			return tail;
+		} else {
+			INode temp = head;
+			while (temp != null && temp.getNext() != null) {
+				if (temp.getKey().equals(key)) {
+					return temp;
+				}
+				temp = temp.getNext();
 			}
-			temp = temp.getNext();
 		}
 		return null;
 	}
@@ -36,6 +40,22 @@ public class MyLinkedList<K> {
 			this.tail.setNext(newNode);
 			this.tail = newNode;
 		}
+	}
+
+	/**
+	 * Deleting the node from the linked list
+	 * 
+	 * @param myMapNode
+	 */
+	public void deleteNode(INode myMapNode) {
+		INode temp3 = head;
+		INode prev = null;
+		while (!temp3.getKey().equals(myMapNode.getKey())) {
+			prev = temp3;
+			temp3 = temp3.getNext();
+		}
+		prev.setNext(temp3.getNext());
+
 	}
 
 	public void printMyNodes() {
