@@ -22,7 +22,7 @@ public class MyLinkedList<K> {
 	}
 
 	/**
-	 * Appending the node at last
+	 * Appending the node to linked list
 	 * 
 	 * @param newNode
 	 */
